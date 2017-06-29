@@ -1,0 +1,20 @@
+
+
+
+
+
+
+
+
+
+<ul>
+    {{#task}}
+    <li>
+        <span>{{title}}</span>
+
+        <form action='/task/{{id}}/delete' method='post'>
+            <button type='submit'>DELETE</button>
+        </form>
+    </li>
+    {{/task}}
+</ul>

@@ -1,9 +1,8 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var todos = sequelize.define('todos', {
-    task: DataTypes.STRING,
-    priority: DataTypes.INTEGER,
-    complete: DataTypes.BOOLEAN
+  var tasks = sequelize.define('tasks', {
+    title: DataTypes.STRING,
+    iscomplete: DataTypes.BOOLEAN
   }, {
     classMethods: {
       associate: function(models) {
@@ -11,5 +10,5 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
-  return todos;
+  return tasks;
 };

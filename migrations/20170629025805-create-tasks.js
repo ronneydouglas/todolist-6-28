@@ -1,22 +1,17 @@
 'use strict';
 module.exports = {
   up: function(queryInterface, Sequelize) {
-    return queryInterface.createTable('todos', {
+    return queryInterface.createTable('tasks', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      task: {
+      title: {
         type: Sequelize.STRING
-        allowNull: false
       },
-      priority: {
-        type: Sequelize.INTEGER
-        allowNull: false
-      },
-      complete: {
+      iscomplete: {
         type: Sequelize.BOOLEAN
       },
       createdAt: {
@@ -30,6 +25,6 @@ module.exports = {
     });
   },
   down: function(queryInterface, Sequelize) {
-    return queryInterface.dropTable('todos');
+    return queryInterface.dropTable('tasks');
   }
 };

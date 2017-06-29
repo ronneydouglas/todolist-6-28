@@ -9,16 +9,21 @@ const expressValidator = require('express-validator');
 
 const app = express();
 
+
+
+
 app.engine('mustache', mustacheExpress());
-app.set('views', path.join(__dirname, 'views'));
+app.set("views", "./views");
 app.set('view engine', 'mustache');
-app.use('/static', express.static('static'));
+app.use('/public', express.static('public'));
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(expressValidator());
 app.use(morgan('dev'));
 
 app.use(routes);
+
+
 
 app.listen(3000, function() {
     console.log('I can hear you');
